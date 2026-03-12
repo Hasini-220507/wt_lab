@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fund Transfer  Mini Banking</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="transfer">
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>Mini Banking</h1>
+        <p>Welcome, <span id="headerUserName">User</span></p>
+      </div>
+      <nav class="nav-main">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="deposit.html" class="nav-link">Deposit</a>
+        <a href="withdraw.html" class="nav-link">Withdraw</a>
+        <a href="transfer.html" class="nav-link active">Transfer</a>
+        <a href="history.html" class="nav-link">History</a>
+        <button type="button" id="logoutBtn" class="btn secondary">Logout</button>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section class="page-content">
+        <div class="card">
+          <h2>Fund Transfer</h2>
+          <form id="transferForm" autocomplete="off">
+            <div class="field-group">
+              <label for="transferTo">Transfer To (Email)</label>
+              <input type="email" id="transferTo" placeholder="recipient@example.com" required />
+            </div>
+            <div class="field-group">
+              <label for="transferAmount">Amount (₹)</label>
+              <input type="number" id="transferAmount" placeholder="Enter amount" step="0.01" min="0.01" required />
+            </div>
+            <div class="field-group">
+              <label for="transferNote">Note (optional)</label>
+              <input type="text" id="transferNote" placeholder="e.g. Rent" maxlength="40" />
+            </div>
+            <button type="submit" class="btn primary">Transfer</button>
+          </form>
+          <p id="transferMessage" class="message"></p>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <span>Mini Banking &copy; 2026</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

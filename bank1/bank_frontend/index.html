@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register - Mini Banking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="auth">
+  <div class="view active">
+    <div class="auth-container">
+      <header class="auth-header">
+        <h1>Mini Banking</h1>
+        <p>Sign in or create an account to continue.</p>
+      </header>
+
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-tab="login">Login</button>
+        <button type="button" class="auth-tab" data-tab="register">Register</button>
+        <button type="button" class="auth-tab" data-tab="forgot" style="display:none;">Forgot Password</button>
+        <button type="button" class="auth-tab" data-tab="reset" style="display:none;">Reset Password</button>
+      </div>
+
+      <form id="loginForm" class="auth-form" autocomplete="off">
+        <div class="field-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="you@example.com" required>
+        </div>
+        <div class="field-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn primary full">Sign In</button>
+        <div style="text-align: center; margin-top: 1rem;">
+          <a href="#" id="showForgotBtn">Forgot Password?</a>
+        </div>
+      </form>
+
+      <form id="registerForm" class="auth-form hidden" autocomplete="off">
+        <div class="field-group">
+          <label for="regName">Full Name</label>
+          <input type="text" id="regName" placeholder="Your name" required>
+        </div>
+        <div class="field-group">
+          <label for="regEmail">Email</label>
+          <input type="email" id="regEmail" placeholder="you@example.com" required>
+        </div>
+        <div class="field-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="Enter password" minlength="4" required>
+        </div>
+        <button type="submit" class="btn primary full">Create Account</button>
+      </form>
+
+      <form id="forgotForm" class="auth-form hidden" autocomplete="off">
+        <div class="field-group">
+          <label for="forgotEmail">Email</label>
+          <input type="email" id="forgotEmail" placeholder="you@example.com" required>
+        </div>
+        <button type="submit" class="btn primary full">Send Reset Link</button>
+        <div style="text-align: center; margin-top: 1rem;">
+          <a href="#" id="backToLoginBtn">Back to Login</a>
+        </div>
+      </form>
+
+      <form id="resetForm" class="auth-form hidden" autocomplete="off">
+        <div class="field-group">
+          <label for="resetToken">Reset Token</label>
+          <input type="text" id="resetToken" placeholder="Enter the reset token" required>
+        </div>
+        <div class="field-group">
+          <label for="resetPassword">New Password</label>
+          <input type="password" id="resetPassword" placeholder="Enter new password" minlength="4" required>
+        </div>
+        <button type="submit" class="btn primary full">Reset Password</button>
+      </form>
+
+      <p id="authMessage" class="message"></p>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
